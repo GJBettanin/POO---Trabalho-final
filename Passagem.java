@@ -12,4 +12,10 @@ public class Passagem {
         this.preco = BigDecimal.valueOf(preco);
         this.cpfCliente = cpfCliente;
     }   
+
+    @Override
+    public String toString(){
+        return String.format("%d - %s, $%.2f%n",    
+                    vooId, cpfCliente, preco);
+    }
 }
