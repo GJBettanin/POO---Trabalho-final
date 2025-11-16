@@ -1,4 +1,4 @@
-package entidades;
+
 import java.time.LocalDateTime;
 
 public class Voo {

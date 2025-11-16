@@ -1,7 +1,4 @@
-import java.io.File;
-
 import javax.swing.JButton;
-import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -45,20 +42,5 @@ public class CadastroVoo extends JFrame{
         confirmar.setBounds(30, 160, 200,25);
         add(confirmar);
 
-        confirmar.addActionListener(e -> {
-
-            JFileChooser fileChooser = new JFileChooser();
-            int resultado = fileChooser.showOpenDialog(null);
-
-            if(resultado == JFileChooser.APPROVE_OPTION){
-                File file = fileChooser.getSelectedFile();
-
-                Aviao aviao = new Aviao(
-                    codigo.
-                )
-            }
-
-            File arquivo = 
-        })
     }
 }
