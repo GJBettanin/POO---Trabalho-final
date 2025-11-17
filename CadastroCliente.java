@@ -73,16 +73,13 @@ public class CadastroCliente extends JFrame {
                     rg.getText()
                 );
 
-                try(FileWriter writer = new FileWriter(arquivoSelecionado)){
-                    writer.write("Nome: " + c2.getNome() + " " + c2.getSobrenome() + "\n" + 
-                                "Telefone: " + c2.getTelefone() + ";\nRG:" + c2.getRG());
+                try(FileWriter writer = new FileWriter(arquivoSelecionado, true)){
+                    writer.write("\nNome: " + c2.getNome() + " " + c2.getSobrenome()  + 
+                                " Telefone: " + c2.getTelefone() + ";RG:" + c2.getRG());
                 } catch(IOException ex){
                     System.out.println(ex.getMessage());
                 }
             }
-
-            Cliente c2 = new Cliente(nome.getText(), sobrenome.getText(), telefone.getText(), rg.getText());
-            System.out.println(c2);
         });
 
         setVisible(true);

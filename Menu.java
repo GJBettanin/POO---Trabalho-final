@@ -10,8 +10,8 @@ public class Menu extends JFrame {
         setSize(600, 600);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(null);
+        setResizable(false);
 
-        // Título estilizado
         JLabel titulo = new JLabel("Sistema de Passagens Aéreas", JLabel.CENTER);
         titulo.setFont(new Font("Arial", Font.BOLD, 24));
         titulo.setForeground(new Color(0, 51, 102));
@@ -33,17 +33,24 @@ public class Menu extends JFrame {
         cadastrarAviao.setBounds(30, 55, 150, 25);
         add(cadastrarAviao);
 
-        JButton comprar = new JButton("Comprar passagem");
-        comprar.setBounds(200, 55, 150,25);
-        add(comprar);
+        JButton cadastroVoo = new JButton("Cadastrar vôo");
+        cadastroVoo.setBounds(200, 55, 150,25);
+        add(cadastroVoo);
         
         JButton cadastrarCliente = new JButton("Cadastrar novo cliente");
         cadastrarCliente.setBounds(370, 55, 150,25);
         add(cadastrarCliente);
 
-        
-        comprar.addActionListener(e -> {
-            new VendaPassagem();
+        JButton registrarVenda = new JButton("Registrar venda");
+        registrarVenda.setBounds(200, 95, 150,25);
+        add(registrarVenda);
+
+        cadastroVoo.addActionListener(e -> {
+            try {
+                new CadastroVoo();
+            } catch (Exception ex) {
+                System.out.println(ex.getMessage());
+            }
         });
 
         cadastrarCliente.addActionListener(e -> {
@@ -62,8 +69,12 @@ public class Menu extends JFrame {
             }
         });
 
-        comprar.addActionListener(e -> {
-            new RelatorioVendas();
+        registrarVenda.addActionListener(e -> {
+            try {
+                new VendaPassagem();
+            } catch (Exception ex) {
+                System.out.println(ex.getMessage());
+            }
         });
 
         setVisible(true);

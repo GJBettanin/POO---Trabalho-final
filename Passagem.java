@@ -1,21 +1,39 @@
 
-import java.math.BigDecimal;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class Passagem {
     
-    private Long vooId;
-    private BigDecimal preco;
-    private String cpfCliente;
+    private String vooId;
+    private String rgCliente;
+    private String idAviao;
+    private LocalDateTime horario;
+    
 
-    public Passagem(Long vooId, Double preco, String cpfCliente){
+    public Passagem(String vooId, String rgCliente, String idAviao){
         this.vooId = vooId;
-        this.preco = BigDecimal.valueOf(preco);
-        this.cpfCliente = cpfCliente;
+        this.rgCliente = rgCliente;
+        this.idAviao = idAviao;
+        this.horario = LocalDateTime.now();
     }   
+
+    public String getVooId(){
+        return vooId;
+    }
+
+    public String getClienteRG(){
+        return rgCliente;
+    }
+
+    public String getAviaoId(){
+        return idAviao;
+    }
 
     @Override
     public String toString(){
-        return String.format("%d - %s, $%.2f%n",    
-                    vooId, cpfCliente, preco);
+        DateTimeFormatter format = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:MM");
+        String data = horario.format(format);
+        return String.format("%d - rg do cliente %s, avião %s, às %s",    
+                    vooId, rgCliente, idAviao, data);
     }
 }

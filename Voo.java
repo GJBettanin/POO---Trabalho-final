@@ -1,24 +1,37 @@
-
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class Voo {
     
-    private static long ID_GERAL = 0;
+    private String vooId;
+    private String origem;
+    private String destino;
+    private LocalDateTime horario;
+    private String codigoAviao;
 
-    private Long id;
-    private Local origem;
-    private Local destino;
-    private LocalDateTime saida;
-    private LocalDateTime chegada;
-    private Companhia companhia;
-
-    public Voo(Local origem, Local destino, Companhia companhia,
-                LocalDateTime saida, LocalDateTime chegada){
+    public Voo(String vooId, String origem, String destino, 
+                String codigoAviao){
+        this.vooId = vooId;
         this.origem = origem;
         this.destino = destino;
-        this.companhia = companhia;
-        this.saida = saida;
-        this.chegada = chegada;
-        this.id = ID_GERAL++;
+        this.codigoAviao = codigoAviao;
+        this.horario = LocalDateTime.now();
+    }
+
+    public String getOrigem(){
+        return origem;
+    }
+
+    public String getDestino(){
+        return destino;
+    }
+
+    public String getCodigoAviao(){
+        return codigoAviao;
+    }
+
+    public String getHorario(){
+        DateTimeFormatter format = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:MM");
+        return horario.format(format);
     }
 }

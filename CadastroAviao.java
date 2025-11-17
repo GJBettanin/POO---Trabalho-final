@@ -65,10 +65,10 @@ public class CadastroAviao extends JFrame{
                     ((Number) assentos.getValue()).intValue()
                 );
 
-                try(FileWriter writer = new FileWriter(file)){
-                    writer.write("Código "+ aviao.getCodigo() + "\n" + 
-                            "Nome " + aviao.getNome() + "\n" +
-                            "Assentos " + aviao.getAssentos()
+                try(FileWriter writer = new FileWriter(file, true)){
+                    writer.write("\nCódigo "+ aviao.getCodigo()  + 
+                            " Nome " + aviao.getNome() +
+                            " Assentos " + aviao.getAssentos()
                     );
                 } catch(IOException ex){
                     System.out.println(ex.getMessage());
