@@ -25,9 +25,9 @@ public class Menu extends JFrame {
         resultado.setBounds(30, 90, 400, 25);
         add(resultado);
 
-        JButton botao = new JButton("Relatório de vendas");
-        botao.setBounds(370, 95, 100, 25);
-        add(botao);
+        JButton relatorioVendas = new JButton("Relatório de vendas");
+        relatorioVendas.setBounds(370, 95, 150, 25);
+        add(relatorioVendas);
 
         JButton cadastrarAviao = new JButton("Cadastrar avião");
         cadastrarAviao.setBounds(30, 55, 150, 25);
@@ -73,6 +73,14 @@ public class Menu extends JFrame {
             try {
                 new VendaPassagem();
             } catch (Exception ex) {
+                System.out.println(ex.getMessage());
+            }
+        });
+
+        relatorioVendas.addActionListener(e -> {
+            try{
+                new RelatorioVendas();
+            } catch(Exception ex){
                 System.out.println(ex.getMessage());
             }
         });

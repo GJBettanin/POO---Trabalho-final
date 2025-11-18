@@ -67,8 +67,8 @@ public class CadastroAviao extends JFrame{
 
                 try(FileWriter writer = new FileWriter(file, true)){
                     writer.write("\nCódigo "+ aviao.getCodigo()  + 
-                            " Nome " + aviao.getNome() +
-                            " Assentos " + aviao.getAssentos()
+                            ", Nome " + aviao.getNome() +
+                            ", Assentos " + aviao.getAssentos()
                     );
                 } catch(IOException ex){
                     System.out.println(ex.getMessage());

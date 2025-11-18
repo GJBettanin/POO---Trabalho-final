@@ -61,7 +61,7 @@ public class CadastroVoo extends JFrame {
         confirmar.setBounds(30, 285, 200, 25);
         add(confirmar);
 
-        confirmar.addActionListener(e -> {
+        confirmar.addActionListener(origemSelectede -> {
             JFileChooser fileChooser = new JFileChooser();
             int resultado = fileChooser.showOpenDialog(null);
            

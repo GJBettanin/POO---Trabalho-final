@@ -3,15 +3,13 @@ import java.time.format.DateTimeFormatter;
 
 public class Voo {
     
-    private String vooId;
     private String origem;
     private String destino;
     private LocalDateTime horario;
     private String codigoAviao;
 
-    public Voo(String vooId, String origem, String destino, 
+    public Voo(String origem, String destino, 
                 String codigoAviao){
-        this.vooId = vooId;
         this.origem = origem;
         this.destino = destino;
         this.codigoAviao = codigoAviao;
